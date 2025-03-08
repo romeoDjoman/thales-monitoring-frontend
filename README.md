@@ -1,59 +1,130 @@
-# MonitoringFrontend
+Pour décrire le **repository** de ton application dans un fichier `README.md` ou dans la documentation, tu peux inclure les informations suivantes. Cette description doit être claire, concise et donner une vue d'ensemble du projet, de son objectif, de ses fonctionnalités, et des technologies utilisées.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+---
 
-## Development server
+## **Exemple de description pour le repository**
 
-To start a local development server, run:
+### **Titre du Projet**
+**Monitoring et Analyse de Production**
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### **Description**
+Ce projet est une application web full-stack développée pour surveiller et analyser les performances des lignes de production en temps réel. L'application permet de gérer les équipements (capteurs et bancs de test), de collecter des données en temps réel, de visualiser les performances via des graphiques dynamiques, et de générer des rapports statistiques.
 
-## Code scaffolding
+L'application est composée de :
+- Un **backend** développé avec **Spring Boot** (Java) pour la gestion des données et la logique métier.
+- Un **frontend** développé avec **Angular** (TypeScript) pour l'interface utilisateur.
+- Une base de données **MySQL** pour le stockage des données.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+### **Fonctionnalités**
+- **Gestion des équipements** : Ajout, modification, suppression et consultation des capteurs et bancs de test.
+- **Collecte de données en temps réel** : Intégration d'une API REST pour récupérer les données des capteurs de production.
+- **Visualisation des performances** : Dashboard avec des graphiques dynamiques (utilisant **Chart.js**) pour suivre les indicateurs clés.
+- **Analyse et alertes** : Détection d'anomalies et notifications en cas de dysfonctionnement.
+- **Génération de rapports** : Stockage des données et génération de rapports statistiques.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### **Technologies Utilisées**
+- **Backend** :
+  - **Spring Boot** : Framework Java pour le développement d'API REST.
+  - **Spring Data JPA** : Gestion des entités et des relations avec la base de données.
+  - **MySQL** : Base de données relationnelle pour le stockage des données.
+  - **Docker** : Conteneurisation de l'application pour un déploiement facile.
 
-## Building
+- **Frontend** :
+  - **Angular** : Framework TypeScript pour le développement d'interfaces utilisateur dynamiques.
+  - **Tailwind CSS** : Framework CSS pour un design moderne et réactif.
+  - **Chart.js** : Bibliothèque JavaScript pour la création de graphiques dynamiques.
+  - **Reactive Forms** : Gestion des formulaires de manière réactive.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+### **Installation et Configuration**
+#### **Backend**
+1. Cloner le repository :
+   ```bash
+   git clone https://github.com/ton-utilisateur/monitoringBackend.git
+   ```
+2. Configurer la base de données :
+   - Créer une base de données MySQL nommée `monitoring_db`.
+   - Mettre à jour les informations de connexion dans `application.properties`.
+3. Lancer l'application :
+   ```bash
+   mvn spring-boot:run
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+#### **Frontend**
+1. Cloner le repository :
+   ```bash
+   git clone https://github.com/ton-utilisateur/monitoringFrontend.git
+   ```
+2. Installer les dépendances :
+   ```bash
+   npm install
+   ```
+3. Lancer l'application :
+   ```bash
+   ng serve
+   ```
 
-## Running unit tests
+#### **Docker**
+1. Construire l'image Docker :
+   ```bash
+   docker build -t monitoringbackend .
+   ```
+2. Lancer les conteneurs avec Docker Compose :
+   ```bash
+   docker-compose up
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+### **Structure du Projet**
+- **Backend** :
+  - `src/main/java/com/monitoring` : Contient les contrôleurs, services, et entités.
+  - `src/main/resources` : Contient les fichiers de configuration (comme `application.properties`).
+  - `Dockerfile` : Fichier de configuration pour Docker.
 
-## Running end-to-end tests
+- **Frontend** :
+  - `src/app` : Contient les composants Angular, services, et modules.
+  - `src/assets` : Contient les ressources statiques (images, styles, etc.).
+  - `proxy.conf.json` : Fichier de configuration du proxy pour Angular.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+### **Auteurs**
+- [Ton Nom](https://github.com/ton-utilisateur)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+### **Licence**
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+### **Capture d'écran (optionnel)**
+Ajoute une capture d'écran de l'application pour donner un aperçu visuel.
+
+---
+
+### **Contribuer**
+Les contributions sont les bienvenues ! Si tu souhaites contribuer au projet, suis les étapes suivantes :
+1. Fork le projet.
+2. Crée une branche pour ta fonctionnalité (`git checkout -b feature/NouvelleFonctionnalité`).
+3. Commit tes changements (`git commit -m 'Ajouter une nouvelle fonctionnalité'`).
+4. Push vers la branche (`git push origin feature/NouvelleFonctionnalité`).
+5. Ouvre une Pull Request.
+
+---
+
+### **Remerciements**
+- Merci à [Spring Boot](https://spring.io/projects/spring-boot) et [Angular](https://angular.io/) pour leurs frameworks incroyables.
+- Merci à [Tailwind CSS](https://tailwindcss.com/) pour les styles modernes.
+
+---
+
+Cette description est complète et donne une vue d'ensemble du projet. Tu peux l'adapter en fonction de tes besoins et ajouter des sections supplémentaires si nécessaire (comme des détails sur les tests, les dépendances, etc.). 🚀
