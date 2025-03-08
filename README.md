@@ -1,9 +1,3 @@
-Pour décrire le **repository** de ton application dans un fichier `README.md` ou dans la documentation, tu peux inclure les informations suivantes. Cette description doit être claire, concise et donner une vue d'ensemble du projet, de son objectif, de ses fonctionnalités, et des technologies utilisées.
-
----
-
-## **Exemple de description pour le repository**
-
 ### **Titre du Projet**
 **Monitoring et Analyse de Production**
 
