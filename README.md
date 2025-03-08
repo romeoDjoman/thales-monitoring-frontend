@@ -91,7 +91,7 @@ L'application est composée de :
 ---
 
 ### **Auteurs**
-- [[Ton Nom](https://github.com/ton-utilisateur)](https://github.com/romeoDjoman)
+- [[Roméo DJOMAN](https://github.com/ton-utilisateur)](https://github.com/romeoDjoman)
 
 ---
 
