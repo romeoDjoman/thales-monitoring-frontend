@@ -117,5 +117,3 @@ Les contributions sont les bienvenues ! Si tu souhaites contribuer au projet, su
 - Merci à [Tailwind CSS](https://tailwindcss.com/) pour les styles modernes.
 
 ---
-
-Cette description est complète et donne une vue d'ensemble du projet. Tu peux l'adapter en fonction de tes besoins et ajouter des sections supplémentaires si nécessaire (comme des détails sur les tests, les dépendances, etc.). 🚀
