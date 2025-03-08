@@ -91,17 +91,14 @@ L'application est composée de :
 ---
 
 ### **Auteurs**
-- [Ton Nom](https://github.com/ton-utilisateur)
+- [[Ton Nom](https://github.com/ton-utilisateur)](https://github.com/romeoDjoman)
 
 ---
 
-### **Licence**
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-### **Capture d'écran (optionnel)**
-Ajoute une capture d'écran de l'application pour donner un aperçu visuel.
+### **Capture d'écran *
 
 ---
 
