@@ -1,0 +1,50 @@
+<!-- equipement.component.html -->
+<div class="container mx-auto p-6">
+    <h2 class="text-3xl font-bold text-center mb-6">Liste des équipements</h2>
+    <ul class="space-y-4">
+      <li *ngFor="let equipement of equipements" class="p-4 bg-white shadow-md rounded-lg">
+        <div class="flex justify-between items-center">
+          <div>
+            <p class="text-lg font-semibold">{{ equipement.nom }}</p>
+            <p class="text-gray-600">{{ equipement.type }}</p>
+            <p class="text-sm text-gray-500">{{ equipement.dateInstallation | date }}</p>
+          </div>
+          <div>
+            <button (click)="selectEquipement(equipement)" class="bg-blue-500 text-white px-4 py-2 rounded-md mr-2 hover:bg-blue-600">
+              Modifier
+            </button>
+            <button (click)="deleteEquipement(equipement.id)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  
+    <h2 class="text-3xl font-bold text-center mt-10 mb-6">{{ selectedEquipement ? 'Modifier' : 'Ajouter' }} un équipement</h2>
+    <form [formGroup]="equipementForm" (ngSubmit)="selectedEquipement ? updateEquipement() : addEquipement()" class="max-w-md mx-auto bg-white p-6 shadow-md rounded-lg">
+      <div class="mb-4">
+        <label for="nom" class="block text-gray-700">Nom</label>
+        <input id="nom" formControlName="nom" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <div class="mb-4">
+        <label for="type" class="block text-gray-700">Type</label>
+        <input id="type" formControlName="type" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <div class="mb-4">
+        <label for="dateInstallation" class="block text-gray-700">Date d'installation</label>
+        <input id="dateInstallation" type="date" formControlName="dateInstallation" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
+        {{ selectedEquipement ? 'Mettre à jour' : 'Ajouter' }}
+      </button>
+      <button *ngIf="selectedEquipement" type="button" (click)="selectedEquipement = null; equipementForm.reset()" class="w-full bg-gray-500 text-white px-4 py-2 rounded-md mt-2 hover:bg-gray-600">
+        Annuler
+      </button>
+    </form>
+  
+    
+    <nav class="mt-10 text-center">
+      <a routerLink="/autre-page" class="text-blue-500 hover:text-blue-700">Aller à une autre page</a>
+    </nav>
+  </div>
