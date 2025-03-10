@@ -60,7 +60,7 @@ L'application est composée de :
 #### **Backend**
 1. Cloner le repository :
    ```bash
-   git clone https://github.com/ton-utilisateur/monitoringBackend.git
+   git clone https://github.com/ton-utilisateur/monitoringFrontend.git
    ```
 2. Configurer la base de données :
    - Créer une base de données MySQL nommée `monitoring_db`.
