@@ -1,0 +1,73 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Gestion des Équipements</h1>
+  
+    <!-- Formulaire d'ajout/mise à jour -->
+    <form [formGroup]="equipementForm" (ngSubmit)="selectedEquipement ? updateEquipement() : addEquipement()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="nom">
+          Nom de l'équipement
+        </label>
+        <input formControlName="nom" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nom" type="text" placeholder="Nom">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="type">
+          Type d'équipement
+        </label>
+        <input formControlName="type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="type" type="text" placeholder="Type">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="dateInstallation">
+          Date d'installation
+        </label>
+        <input formControlName="dateInstallation" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dateInstallation" type="date">
+      </div>
+      <div class="flex items-center justify-between">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          {{ selectedEquipement ? 'Mettre à jour' : 'Ajouter' }}
+        </button>
+        <button *ngIf="selectedEquipement" type="button" (click)="selectedEquipement = null; equipementForm.reset()" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Annuler
+        </button>
+      </div>
+    </form>
+  
+    <!-- Liste des équipements -->
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h2 class="text-xl font-semibold mb-4">Liste des Équipements</h2>
+      <table class="min-w-full leading-normal">
+        <thead>
+          <tr>
+            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              Nom
+            </th>
+            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              Type
+            </th>
+            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              Date d'installation
+            </th>
+            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let equipement of equipements" class="hover:bg-gray-50">
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              {{ equipement.nom }}
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              {{ equipement.type }}
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              {{ equipement.dateInstallation | date }}
+            </td>
+            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+              <button (click)="selectEquipement(equipement)" class="text-blue-500 hover:text-blue-700 mr-2">Modifier</button>
+              <button (click)="deleteEquipement(equipement.id)" class="text-red-500 hover:text-red-700">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

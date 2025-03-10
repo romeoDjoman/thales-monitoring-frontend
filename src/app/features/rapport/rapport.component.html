@@ -1,0 +1,22 @@
+<div class="container mx-auto p-4">
+  <!-- Titre du rapport -->
+  <h2 class="text-3xl font-bold text-center mb-6">Rapport Statistique</h2>
+
+  <!-- Contenu du rapport -->
+  <div *ngIf="rapport" class="bg-white shadow-lg rounded-lg p-8 border border-gray-200 max-w-2xl mx-auto">
+    <div class="space-y-4">
+      <p class="text-lg"><span class="font-semibold">Équipement ID :</span> {{ rapport.equipementId }}</p>
+      <p class="text-lg"><span class="font-semibold">Nombre de données :</span> {{ rapport.nombreDonnees }}</p>
+      <p class="text-lg"><span class="font-semibold">Moyenne :</span> {{ rapport.moyenne | number: '1.2-2' }}</p>
+      <p class="text-lg"><span class="font-semibold">Maximum :</span> {{ rapport.max | number: '1.2-2' }}</p>
+      <p class="text-lg"><span class="font-semibold">Minimum :</span> {{ rapport.min | number: '1.2-2' }}</p>
+    </div>
+
+    <!-- Bouton pour générer le PDF -->
+    <div class="mt-8 text-center">
+      <button (click)="generatePDF()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer">
+        Télécharger en PDF
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container mx-auto p-6">
+  <div class="max-h-[400px] overflow-y-auto">
+    <table
+      class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden"
+    >
+      <thead>
+        <tr class="bg-gray-100 text-gray-700 uppercase text-sm leading-normal">
+          <th class="py-3 px-6 text-left border-b border-gray-200">Type de Capteur</th>
+          <th class="py-3 px-6 text-left border-b border-gray-200">Mesure</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        <tr
+          *ngFor="let donnee of donneesCapteur"
+          class="border border-gray-200 hover:bg-gray-50 transition"
+        >
+          <td class="py-3 px-6 border-r border-gray-200 flex items-center">
+            <span
+              class="w-3 h-3 rounded-full mr-2"
+              [ngClass]="{
+                'bg-green-500': getStatusColor(donnee.valeur) === 'green',
+                'bg-orange-500': getStatusColor(donnee.valeur) === 'orange',
+                'bg-red-500': getStatusColor(donnee.valeur) === 'red'
+              }"
+            >
+            </span>
+            {{ donnee.equipement.nom }}
+          </td>
+          <td class="py-3 px-6 border-r border-gray-200">
+            {{ donnee.valeur | number : "1.2-2" }}
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+  <div class="mt-4 flex space-x-4 text-sm">
+    <div class="flex items-center">
+      <span class="w-3 h-3 bg-green-400 rounded-full inline-block mr-2"></span>
+      <span>Données reçues il y a moins de 30 min</span>
+    </div>
+    <div class="flex items-center">
+      <span class="w-3 h-3 bg-orange-500 rounded-full inline-block mr-2"></span>
+      <span>Données reçues il y a entre 30 min et 1 heure</span>
+    </div>
+    <div class="flex items-center">
+      <span class="w-3 h-3 bg-red-500 rounded-full inline-block mr-2"></span>
+      <span>Données trop anciennes (&gt; 1 heure)</span>
+    </div>
+  </div>
+</div>
+

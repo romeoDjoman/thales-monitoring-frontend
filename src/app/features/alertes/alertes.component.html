@@ -1,0 +1,7 @@
+<h2>Alertes</h2>
+<div *ngIf="messageAlerte; else pasAlerte">
+  <p class="alert alert-danger">{{ messageAlerte }}</p>
+</div>
+<ng-template #pasAlerte>
+  <p>Aucune alerte détectée.</p>
+</ng-template>
